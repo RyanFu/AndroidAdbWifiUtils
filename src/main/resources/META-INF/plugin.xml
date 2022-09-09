@@ -1,0 +1,60 @@
+<idea-plugin>
+  <!-- 插件唯一id，不能和其他插件id重复 -->
+  <id>com.lzw.adbwifiutils</id>
+
+  <!-- 插件名称（在插件市场搜索插件时，搜索的就是这个名称） -->
+  <name>AdbWifiUtils</name>
+
+  <!--  版本号-->
+  <version>1.0</version>
+
+  <!-- 供应商主页和email -->
+  <vendor email="lzw20099002@126.com" url="https://gitee.com/AWeiLoveAndroid"/>
+
+  <!-- 插件描述，支持HTML标签 -->
+  <description>
+    This is an plugin for Android Studio that allows you to connect Android devices over WiFi.
+  </description>
+
+  <!-- 插件版本变更信息，支持HTML标签； 将展示在 settings | Plugins 对话框和插件仓库的Web页面 -->
+  <change-notes>
+    <![CDATA[
+    <div>&nbsp;&nbsp;This is the first commit.The plugin supports connect Android devices over wifi.The plugin supports all Android versions.</div>
+    <p></p>
+    <div>● [Usage]:</div>
+    &nbsp;&nbsp;○ input your wifi ip and any port and then click the [connect] button, then your compute can connect the Android device.
+    <p></p>
+    <div>● [Tips]:</div>
+    &nbsp;&nbsp;○ 1.Make sure that the Android device and the computer are connected to the same WiFi.<br/>
+    &nbsp;&nbsp;○ 2.If your Android device version earlier than Android 11, you must open your Android devices and find [Settings] --> [WLAN],
+    and then find the WiFi IP address, just Write it down on your mind, it's very important.<br/>
+    &nbsp;&nbsp;○ 3.If your Android device version is equal to or later than Android 11, you can find [Settings] --> [Additional settings] --> [Developer options],
+    [Wireless debugging], just open it.
+     ]]>
+  </change-notes>
+
+  <!--
+   插件兼容IDEA的最大和最小 build 号，两个属性可以任选一个或者同时使用,
+  please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- 插件所依赖的其他插件的id
+  please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.lang</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <toolWindow
+            id="AdbWifiUtils"
+            secondary="true"
+            anchor="right"
+            factoryClass="com.lzw.adbwifiutils.javafx.CustomToolWindow"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>

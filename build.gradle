@@ -1,0 +1,62 @@
+plugins {
+    // Apply the java plugin to add support for Java
+    id 'java'
+
+    // gradle-intellij-plugin See https://github.com/JetBrains/gradle-intellij-plugin
+    id 'org.jetbrains.intellij' version '0.7.3'
+}
+
+group 'com.lzw.adbwifiutils'
+version '1.0'
+sourceCompatibility = 1.8
+
+repositories {
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    maven{url 'https://maven.aliyun.com/repository/gradle-plugin'}
+    maven{url 'https://maven.aliyun.com/repository/public'}
+    maven{url 'https://maven.aliyun.com/repository/central'}
+    mavenCentral()
+    jcenter()
+}
+
+//sourceSets{
+//    main {
+//        java {
+//            srcDir 'src/java' // 指定源码目录
+//        }
+//        resources {
+//            srcDir 'src/resources' //资源目录
+//        }
+//    }
+//}
+
+dependencies {
+//    // This dependency is found on compile classpath of this component and consumers.
+//    implementation 'com.google.guava:guava:27.0.1-jre'
+    implementation 'org.jetbrains:annotations:19.0.0'
+    
+//    // Use JUnit test framework
+//    testImplementation 'junit:junit:4.12'
+}
+
+// Define the main class for the application
+//mainClassName = 'xxx.xxx'
+
+// See https://github.com/JetBrains/gradle-intellij-plugin/
+intellij {
+    version '2020.1.4'
+}
+
+
+patchPluginXml {
+    version = project.version
+    sinceBuild = '173.*'
+    untilBuild = '222.*'
+}
+
+// 发布IDEA Plugin在这里配置：
+//publishPlugin {
+//    channels = 'Stable'
+//    token = System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken")
+//}
